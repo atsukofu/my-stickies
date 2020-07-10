@@ -1,0 +1,26 @@
+@import 'modules/tasks';
+@import 'modules/projects';
+@import 'reset';
+
+header {
+  background-color: #91c4e5;
+  text-align: center;
+}
+.header--logo {
+  font-size: 30px;
+  color: #f0f8ff;
+  font-weight: bold;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.header--logo:hover {
+  color: #ffffff;
+}
+
+body {
+  width: 100VW;
+  height: 100Vh;
+  background-color: #f0f8ff;
+  margin: 0 auto;
+}
