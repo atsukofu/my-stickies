@@ -13,12 +13,27 @@
 //   margin: 0 auto;
 // }
 
-.top-title {
-  font-size: 25px;
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #719bad;
+.projects-index-body__header{
+  display: flex;
+  width: 700px;
+  margin: 20px auto;
+  &--title {
+    font-size: 25px;
+    color: #719bad;
+    width: 500px;
+  }
+  &--newbtn {
+    height: 35px;
+    background-color: #91c4e5;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    line-height: 35px;
+    padding: 0 8px;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }
 
 .projects-board-area {
@@ -41,5 +56,27 @@
       text-decoration: none;
       color: #719bad;
     }
+  }
+}
+
+
+.new-project-message {
+  font-size: 20px;
+  margin: 30px auto 15px;
+  text-align: center;
+  color: #719bad;
+}
+.projects-new-container {
+  width: 700px;
+  background-color: #f1f2f7;
+  margin: 0 auto;
+  padding: 20px 20px 50px;
+  .new-project-box {
+    width: 100%;
+  }
+  .new-project-btn {
+    width: 80px;
+    margin-top: 10px;
+    float: right;
   }
 }
