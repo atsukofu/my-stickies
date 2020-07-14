@@ -1,0 +1,7 @@
+.projects-new-header
+  %h2.new-project-message
+    新しいプロジェクトを作成しましょう！
+  .projects-new-container
+    = form_with(model: [@project]) do |f|
+      = f.text_field :name, class: "new-project-box", placeholder: "プロジェクト名を入力してください"
+      = f.submit 'Save', class: "new-project-btn"

@@ -1,13 +1,10 @@
 .projects-index-body
-  %h2.top-title
-    あなたのプロジェクト一覧
+  .projects-index-body__header
+    %h2.projects-index-body__header--title
+      あなたのプロジェクト一覧
+    = link_to "プロジェクトを作成", new_project_path, class:"projects-index-body__header--newbtn"
   .projects-board-area
-    .projects-board-area__project
-      %p.projects-board-area__project--name
-        = link_to "プロジェクト名", "#"
-    .projects-board-area__project
-      %p.projects-board-area__project--name
-        = link_to "プロジェクト名", "#"
-    .projects-board-area__project
-      %p.projects-board-area__project--name
-        = link_to "プロジェクト名", "#"
+    - @projects.each do |project|
+      .projects-board-area__project
+        .projects-board-area__project--name
+          = link_to project.name, project_path(project)

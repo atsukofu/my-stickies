@@ -18,23 +18,15 @@ ActiveRecord::Schema.define(version: 2020_06_27_063958) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "content"
+    t.integer "status", null: false
     t.bigint "project_id"
-    t.bigint "status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_tasks_on_project_id"
-    t.index ["status_id"], name: "index_tasks_on_status_id"
   end
 
   add_foreign_key "tasks", "projects"
-  add_foreign_key "tasks", "statuses"
 end
