@@ -1,20 +1,28 @@
 .tasks-index-body
   .board-area
     %span.board-area--project-name
-      プロジェクト名
-    =link_to "#", class: "new-task" do
+      = @project.name
+    =link_to  new_project_task_path(@project), class: "new-task" do
       +新しいタスクを追加
     .board-area--board
       .board-area--board--status
         %h3.board-area--board--status__logo
           ToDo
-        - @tasks.each do |task|
-          .postit
-            .potit--title
-              = task.name
+        - @todos.each do |task|
+          = link_to edit_project_task_path(@project, task), class:"postit" do
+            %span.potit--title
+              = task.title
       .board-area--board--status
         %h3.board-area--board--status__logo
           Doing
+        - @doings.each do |task|
+          = link_to edit_project_task_path(@project, task), class:"postit" do
+            %span.potit--title
+              = task.title
       .board-area--board--status
         %h3.board-area--board--status__logo
           Done
+        - @dones.each do |task|
+          = link_to edit_project_task_path(@project, task), class:"postit" do
+            %span.potit--title
+              = task.title
