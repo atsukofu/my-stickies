@@ -17,3 +17,6 @@
         = f.radio_button :status, 2
         Done
       = f.submit 'Save', class: "new-task-btn"
+    .tasks-new-container__menu
+      = link_to "戻る", :back
+      = link_to "削除", project_task_path(@project, @task), method: :delete
