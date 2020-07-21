@@ -2,11 +2,15 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    @project = Project.new
   end
 
   def show
     @project = Project.find(params[:id])
     @tasks = @project.tasks
+    @todos = @tasks.where(status: 0)
+    @doings = @tasks.where(status: 1)
+    @dones = @tasks.where(status: 2)
   end
 
   def new 
@@ -22,6 +26,7 @@ class ProjectsController < ApplicationController
     end
   end
 
+  private
   def project_params
     params.require(:project).permit(:name)
   end
