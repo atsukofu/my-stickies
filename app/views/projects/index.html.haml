@@ -2,9 +2,14 @@
   .projects-index-body__header
     %h2.projects-index-body__header--title
       あなたのプロジェクト一覧
-    = link_to "プロジェクトを作成", new_project_path, class:"projects-index-body__header--newbtn"
   .projects-board-area
     - @projects.each do |project|
-      .projects-board-area__project
-        .projects-board-area__project--name
-          = link_to project.name, project_path(project)
+      = link_to project_path(project), class:"projects-board-area__project" do
+        = project.name
+  .projects-new-header
+    %h2.new-project-message
+      新しいプロジェクトを作成しましょう！
+    .projects-new-container
+      = form_with(model: [@project]) do |f|
+        = f.text_field :name, class: "new-project-box", placeholder: "プロジェクト名を入力してください"
+        = f.submit 'Save', class: "new-project-btn"
