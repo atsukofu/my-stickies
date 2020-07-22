@@ -1,0 +1,5 @@
+= link_to edit_project_task_path(project, task), class:"postit" do
+  %input{name: "_method", type: "hidden", value: task.id, class: "task_status_update_id"}
+  %input{name: "_method", type: "hidden", value: project.id, class: "task_project_id"}
+  %span.potit--title
+    = task.title
