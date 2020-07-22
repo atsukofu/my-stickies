@@ -24,8 +24,9 @@ class TasksController < ApplicationController
 
   def update
     @task = @project.tasks.find(params[:id])
+    # @task.update(task_params)
     if @task.update(task_params)
-      redirect_to root_path
+      redirect_to project_path(@project)
     else
       flash.now[:alert] =  'タイトルを入力してください。'
       render :new
