@@ -8,5 +8,5 @@
       = f.password_field :password, class: "new-user-box", placeholder: "パスワードを入力してください"
       = f.password_field :password_confirmation, class: "new-user-box", placeholder: "確認用パスワードを入力してください"
       = f.submit '登録', class: "new-user-btn"
-  = link_to new_session_path do
+  = link_to new_session_path, class:"sign-in-up-link" do
     アカウントをお持ちの方はこちら

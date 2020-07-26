@@ -9,7 +9,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %header
-      %h1.header--logo
+      = link_to root_path, class:"header--logo" do
         My Post It
     = flash[:notice]
     = yield

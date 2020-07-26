@@ -1,17 +1,19 @@
 .users-new-header {
+  margin: 20px auto;
+  width: 700px;
   h2 {
-    margin-top: 20px;
+    margin: 20px 0;
     font-size: 20px;
     text-align: center;
     color: #719bad;
   }
   .users-new-container {
-    background-color: #eeeeee;
     width: 700px;
+    background-color: #eeeeee;
     padding-top: 20px;
     padding-bottom: 50px;
-    margin: 20px auto;
     position: relative;
+    margin-bottom: 20px;
     .new-user-box {
       display: block;
       margin: 10px auto;
@@ -22,6 +24,21 @@
     .new-user-btn {
       position: absolute;
       right: 80px;
+      background-color: #91c4e5;
+      border-radius: 4px;
+      border: none;;
+      padding: 5px;
+      color: #fff;
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+  }
+  .sign-in-up-link {
+    text-decoration: none;
+    color: #719bad;
+    &:hover {
+      border-bottom: solid 1px #719bad;
     }
   }
 }

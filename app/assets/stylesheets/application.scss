@@ -13,15 +13,16 @@ header {
   font-weight: bold;
   display: inline-block;
   cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    color: #ffffff;
+  }
 }
 
-.header--logo:hover {
-  color: #ffffff;
-}
 
 body {
   width: 100VW;
-  height: 100Vh;
+  height: 150vh;
   background-color: #f0f8ff;
   margin: 0 auto;
 }

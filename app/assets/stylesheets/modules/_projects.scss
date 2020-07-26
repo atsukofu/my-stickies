@@ -7,7 +7,7 @@
 }
 
 .projects-index-body {
-  width: 100VW;
+  width: 100vw;
   height: 100%;
   margin: 0 auto;
 }  
@@ -21,6 +21,20 @@
       margin: 20px auto 0;
       text-align: center;
       color: #719bad;
+    }
+    .logout-btn {
+      display: inline-block;
+      background-color: #91c4e5;
+      width: 100px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #fff;
+      text-align: center;
+      margin-top: 20px;
+      line-height: 30px;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
   
@@ -64,7 +78,6 @@
     border-radius: 4px;
     padding: 5px;
     color: #719bad;
-    
   }
   .new-project-btn {
     width: 80px;
@@ -78,5 +91,10 @@
     line-height: 30px;
     padding: 0 8px;
     border: none;
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
+
+

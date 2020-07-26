@@ -2,6 +2,9 @@
   .projects-index-body__header
     %h2.projects-index-body__header--title
       = "#{session[:user_name]}さんのプロジェクト一覧"
+    -if logged_in?
+      =link_to session_path(session[:user_id]), class:"logout-btn", method: :delete do
+        ログアウト
   .projects-board-area
     - @projects.each do |project|
       = link_to project_path(project), class:"projects-board-area__project" do
@@ -14,5 +17,4 @@
         = f.text_field :name, class: "new-project-box", placeholder: "プロジェクト名を入力してください"
         = f.submit 'Save', class: "new-project-btn"
 
-  -if logged_in?
-    =link_to "ログアウト", session_path(session[:user_id]), method: :delete
+ 
