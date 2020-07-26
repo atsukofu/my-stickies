@@ -1,0 +1,12 @@
+.users-new-header
+  %h2.new-user-message
+    アカウントを作成しましょう！
+  .users-new-container
+    = form_with(model: [@user]) do |f|
+      = f.text_field :username, class: "new-user-box", placeholder: "ユーザー名を入力してください"
+      = f.email_field :email, class: "new-user-box", placeholder: "メールアドレスを入力してください"
+      = f.password_field :password, class: "new-user-box", placeholder: "パスワードを入力してください"
+      = f.password_field :password_confirmation, class: "new-user-box", placeholder: "確認用パスワードを入力してください"
+      = f.submit '登録', class: "new-user-btn"
+  = link_to new_session_path do
+    アカウントをお持ちの方はこちら

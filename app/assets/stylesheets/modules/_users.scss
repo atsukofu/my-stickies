@@ -1,0 +1,27 @@
+.users-new-header {
+  h2 {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    color: #719bad;
+  }
+  .users-new-container {
+    background-color: #eeeeee;
+    width: 700px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin: 20px auto;
+    position: relative;
+    .new-user-box {
+      display: block;
+      margin: 10px auto;
+      width: 80%;
+      border: solid 1px #719bad;
+      border-radius: 4px;
+    }
+    .new-user-btn {
+      position: absolute;
+      right: 80px;
+    }
+  }
+}
