@@ -1,22 +1,26 @@
 .tasks-index-body
   .board-area
-    %span.board-area--project-name
-      = @project.name
-    =link_to  new_project_task_path(@project), class: "new-task" do
-      +新しいタスクを追加
-    .board-area--board
-      .board-area--board--status.sortable{data: {id: 0}}
-        %h3.board-area--board--status__logo
-          ToDo
-        - @todos.each do |task|
-          = render partial: 'postit', locals: {task:task, project:@project}
-      .board-area--board--status.sortable{data: {id: 1}}
-        %h3.board-area--board--status__logo
-          Doing
-        - @doings.each do |task|
-          = render partial: 'postit', locals: {task:task, project:@project}
-      .board-area--board--status.sortable{data: {id: 2}}
-        %h3.board-area--board--status__logo
-          Done
-        - @dones.each do |task|
-          = render partial: 'postit', locals: {task:task, project:@project}
+    - if @project.user_id == session[:user_id]
+      %span.board-area--project-name
+        = @project.name
+      =link_to  new_project_task_path(@project), class: "new-task" do
+        +新しいタスクを追加
+      .board-area--board
+        .board-area--board--status.sortable{data: {id: 0}}
+          %h3.board-area--board--status__logo
+            ToDo
+          - @todos.each do |task|
+            = render partial: 'postit', locals: {task:task, project:@project}
+        .board-area--board--status.sortable{data: {id: 1}}
+          %h3.board-area--board--status__logo
+            Doing
+          - @doings.each do |task|
+            = render partial: 'postit', locals: {task:task, project:@project}
+        .board-area--board--status.sortable{data: {id: 2}}
+          %h3.board-area--board--status__logo
+            Done
+          - @dones.each do |task|
+            = render partial: 'postit', locals: {task:task, project:@project}
+    -else
+      %p
+        このページは閲覧できません

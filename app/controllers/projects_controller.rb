@@ -1,8 +1,13 @@
 class ProjectsController < ApplicationController
 
   def index
-    @projects = Project.all
-    @project = Project.new
+    if session[:user_id]
+      @projects = Project.where(user_id: session[:user_id])
+      @project = Project.new
+    else
+      redirect_to new_session_path
+    
+    end
   end
 
   def show
@@ -28,6 +33,6 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:name)
+    params.require(:project).permit(:name).merge(user_id: session[:user_id])
   end
 end
