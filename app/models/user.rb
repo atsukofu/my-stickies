@@ -6,7 +6,13 @@ class User < ApplicationRecord
   validates :email,
             presence: true,
             uniqueness: {case_sensitive: false},
-            format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
+            format: {with: /\A[\w+\-_.]+@[a-z\d\-_.]+\.[a-z]+\z/i}
   validates :password, length: {minimum: 8}
   has_secure_password
+
+  # def confirm_name
+  #   if @user.username >= 16 
+  #     flash.now[:alert] =  'ユーザー名は15文字以内で入力してください'
+  #   end
+  # end
 end
