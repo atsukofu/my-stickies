@@ -14,10 +14,10 @@ describe Project do
     end
   
     it "emailが他ユーザーと重複していると登録できないこと" do
-      user = create(:user, email: "aaa@email.com")
-      another_user = build(:user, email: "aaa@email.com")
+      user = create(:user, email: "ababab@email.com")
+      another_user = build(:user, email: "ababab@email.com")
       another_user.valid?
-      expect(another_user.errors[:email]).to include()
+      expect(another_user.errors[:email]).to include("has already been taken")
     end
   
     it "emailがないと登録できないこと" do

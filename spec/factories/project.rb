@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :project do
-    name          {"name"}
+    name          {"project"}
     user     
   end
 
