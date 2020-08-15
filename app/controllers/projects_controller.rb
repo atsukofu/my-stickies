@@ -18,10 +18,6 @@ class ProjectsController < ApplicationController
     @dones = @tasks.where(status: 2)
   end
 
-  def new 
-    @project = Project.new
-  end
-
   def create
     @project = Project.new(project_params)
     if @project.save
