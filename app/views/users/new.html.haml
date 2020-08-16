@@ -2,7 +2,7 @@
   %h2.new-user-message
     アカウントを作成しましょう！
   .users-new-container
-    = form_with(model: [@user]) do |f|
+    = form_with(model: [@user], local: true) do |f|
       = f.text_field :username, class: "new-user-box", id: "username-box",placeholder: "ユーザー名を15文字以内で入力してください"
       = f.email_field :email, class: "new-user-box",id: "newemail-box", placeholder: "メールアドレスを入力してください"
       = f.password_field :password, class: "new-user-box", id: "newpassword-box", placeholder: "パスワードを8文字以上で入力してください"

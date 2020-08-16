@@ -6,15 +6,6 @@
   box-sizing: border-box;
 }
 
-// .tasks-index-body {
-//   width: 100VW;
-//   height: 100Vh;
-//   background-color: #f0f8ff;
-//   margin: 0 auto;
-// }
-
-
-
 
 
 .board-area {
@@ -26,13 +17,16 @@
   margin: 0 auto;
   &--project-name {
     color: #172b4d;
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 20px;
+    font-weight: bold;
   }
   .new-task {
     padding: 5px 8px;
     border-radius: 4px;
     background-color: #91c4e5;
+    float: right;
+    margin-right: 20px;
     &:hover {
       opacity: 0.8;
     }
@@ -43,7 +37,7 @@
     display: flex;
     &--status {
       width: 270px;
-      height: 300px;
+      min-height: 300px;
       background-color: #f1f2f7;
       border-radius: 4px;
       margin: 0 15px;

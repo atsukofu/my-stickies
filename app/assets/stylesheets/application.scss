@@ -1,6 +1,7 @@
 @import 'modules/users';
 @import 'modules/tasks';
 @import 'modules/projects';
+@import 'modules/kaminari';
 @import 'reset';
 
 header {
@@ -17,6 +18,11 @@ header {
   &:hover {
     color: #ffffff;
   }
+}
+
+.flashmessage{
+  color: #172b4d;
+  margin-left: 30px;
 }
 
 

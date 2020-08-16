@@ -1,19 +1,22 @@
 .tasks-new-header
-  %h2.new-task-message
-    新しいプロジェクトを作成しましょう！
-  .tasks-new-container
-    = form_with(model: [@project, @task]) do |f|
-      = f.text_field :title, class: "new-task-title", placeholder: "タスク名を入力してください"
-      = f.text_area :content, class: "new-task-content", placeholder: "タスクの内容を入力してください"
-      %h3.new-task-status
-        現在のステータスを選択してください
-      = f.label :status do
-        = f.radio_button :status, 0, :checked => true
-        Todo
-      = f.label :status do
-        = f.radio_button :status, 1
-        Doing
-      = f.label :status do
-        = f.radio_button :status, 2
-        Done
-      = f.submit 'Save', class: "new-task-btn"
+  - if @project.user_id == session[:user_id]
+    %h2.new-task-message
+      新しいプロジェクトを作成しましょう！
+    .tasks-new-container
+      = form_with(model: [@project, @task], local: true) do |f|
+        = f.text_field :title, class: "new-task-title", placeholder: "タスク名を入力してください"
+        = f.text_area :content, class: "new-task-content", placeholder: "タスクの内容を入力してください"
+        %h3.new-task-status
+          現在のステータスを選択してください
+        = f.label :status do
+          = f.radio_button :status, 0, :checked => true
+          Todo
+        = f.label :status do
+          = f.radio_button :status, 1
+          Doing
+        = f.label :status do
+          = f.radio_button :status, 2
+          Done
+        = f.submit 'Save', class: "new-task-btn"
+  - else
+    このページは閲覧できません

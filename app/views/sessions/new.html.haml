@@ -2,7 +2,7 @@
   %h2.new-user-message
     サインインしましょう！
   .users-new-container
-    = form_for(:session, url: sessions_path) do |f|
+    = form_for(:session, url: sessions_path, local: true) do |f|
       = f.email_field :email, class: "new-user-box", id: "session-email", placeholder: "メールアドレスを入力してください"
       = f.password_field :password, class: "new-user-box", id: "session-password", placeholder: "パスワードを入力してください"
       = f.submit 'サインイン', class: "new-user-btn"

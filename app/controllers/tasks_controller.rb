@@ -11,9 +11,10 @@ class TasksController < ApplicationController
   def create
     @task = @project.tasks.new(task_params)
     if @task.save
-      redirect_to root_path
+      flash[:success] = 'タスクを作成しました。'
+      redirect_to project_path(@project)
     else
-      flash.now[:alert] =  'タイトルを入力してください。'
+      flash.now[:alert] = 'タイトルを正しく入力してください。'
       render :new
     end
   end
@@ -24,11 +25,11 @@ class TasksController < ApplicationController
 
   def update
     @task = @project.tasks.find(params[:id])
-    # @task.update(task_params)
     if @task.update(task_params)
+      flash[:success] = 'タスクを更新しました。'
       redirect_to project_path(@project)
     else
-      flash.now[:alert] =  'タイトルを入力してください。'
+      flash.now[:alert] = 'タイトルを入力してください。'
       render :new
     end
   end

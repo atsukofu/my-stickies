@@ -2,11 +2,11 @@ class ProjectsController < ApplicationController
 
   def index
     if session[:user_id]
-      @projects = Project.where(user_id: session[:user_id])
+      @projects = Project.where(user_id: session[:user_id]).page(params[:page]).per(5)
       @project = Project.new
     else
+      flash[:notice] = "ログインしてください"
       redirect_to new_session_path
-    
     end
   end
 
@@ -21,9 +21,12 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
+      flash[:success] = "新しいプロジェクトを作成しました"
       redirect_to root_path
     else
-      render :new
+      @projects = Project.where(user_id: session[:user_id])
+      flash.now[:alert] = "プロジェクト名を正しく入力してください"
+      render :index
     end
   end
 
