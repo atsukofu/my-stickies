@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: my-post-it_production
-  username: my-post-it
-  password: <%= ENV['MY-POST-IT_DATABASE_PASSWORD'] %>
+  # database: my-post-it_production
+  # username: my-post-it
+  # password: <%= ENV['MY-POST-IT_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
