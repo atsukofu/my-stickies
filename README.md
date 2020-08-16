@@ -21,6 +21,9 @@ $ rails db:migrate<br>
 $ rails s<br>
 👉 http://localhost:3000
 
+If you'd like to access MyPostit Website, <br>
+please access 👉https://my-post-it.herokuapp.com/
+
 ## Commitment
 It has a simple UI　and you can use it by easier oparation.<br>
 When you want to change a situation of task, you only move "post-it" to another board by drag and drop and the situation  of task is updated.<br>
