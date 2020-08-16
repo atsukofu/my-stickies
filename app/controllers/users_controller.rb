@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new
+    if session[:user_id]
+      flash[:alert] = "すでにログインしています"
+      redirect_to root_path
+    else
+      @user = User.new
+    end
   end
 
   def create
@@ -10,6 +15,7 @@ class UsersController < ApplicationController
       session[:user_name]=@user.username
       redirect_to root_path
     else
+      flash.now[:alert] = "必須項目を入力してください"
       render :new
     end
   end

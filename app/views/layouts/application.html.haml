@@ -11,5 +11,7 @@
     %header
       = link_to root_path, class:"header--logo" do
         My Post It
-    = flash[:notice]
+    - flash.each do |key, value|
+      %p.flashmessage
+        = value
     = yield

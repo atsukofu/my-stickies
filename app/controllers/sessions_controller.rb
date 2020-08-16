@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
   def new
+    if session[:user_id]
+      flash[:alert] = "すでにログインしています"
+      redirect_to root_path
+    end
   end
 
   def create
@@ -7,10 +11,12 @@ class SessionsController < ApplicationController
     if user && user.authenticate(session_params[:password])
       session[:user_id] = user.id
       session[:user_name] = user.username
-      redirect_to root_path, notice: 'ログインしました'
+      flash[:success] = 'ログインしました'
+      redirect_to root_path
     else
       session[:email] = nil
-      render :new, notice: 'ログインできませんでした'
+      flash.now[:alert] = 'ログインできませんでした'
+      render :new
     end
   end
 

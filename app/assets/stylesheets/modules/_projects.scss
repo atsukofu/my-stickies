@@ -46,7 +46,7 @@
     .projects-board-area__project {
       display: block;
       width: 80%;
-      height: 40px;
+      min-height: 40px;
       background-color: #fff;
       margin: 15px auto;
       padding: 8px;

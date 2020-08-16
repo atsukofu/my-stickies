@@ -1,22 +1,25 @@
 .tasks-new-header
-  %h2.new-task-message
-    = @task.title
-  .tasks-new-container
-    = form_with(model: [@project, @task]) do |f|
-      = f.text_field :title, class: "new-task-title"
-      = f.text_area :content, class: "new-task-content"
-      %h3.new-task-status
-        現在のステータスを選択してください
-      = f.label :status do
-        = f.radio_button :status, 0
-        Todo
-      = f.label :status do
-        = f.radio_button :status, 1
-        Doing
-      = f.label :status do
-        = f.radio_button :status, 2
-        Done
-      = f.submit 'Save', class: "new-task-btn"
-    .tasks-new-container__menu
-      = link_to "戻る", :back
-      = link_to "削除", project_task_path(@project, @task), method: :delete
+  - if @project.user_id == session[:user_id]
+    %h2.new-task-message
+      = @task.title
+    .tasks-new-container
+      = form_with(model: [@project, @task], local: true) do |f|
+        = f.text_field :title, class: "new-task-title"
+        = f.text_area :content, class: "new-task-content"
+        %h3.new-task-status
+          現在のステータスを選択してください
+        = f.label :status do
+          = f.radio_button :status, 0
+          Todo
+        = f.label :status do
+          = f.radio_button :status, 1
+          Doing
+        = f.label :status do
+          = f.radio_button :status, 2
+          Done
+        = f.submit 'Save', class: "new-task-btn"
+      .tasks-new-container__menu
+        = link_to "戻る", :back
+        = link_to "削除", project_task_path(@project, @task), method: :delete
+  - else
+    このページは閲覧できません
