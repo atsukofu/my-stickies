@@ -5,7 +5,7 @@
 This tool enable you to manage your tasks like "kanban method".<br>
 You can check and change situation of your tasks wherever you are if only you access this "My Stickies"!<br>
 このアプリは「カンバン方式」でタスクを管理できるツールです。<br>
-このアプリにアクセスするだけで、手元に「カンバン」を作成することができ、タスクの状況を確認することができます。<br>
+このアプリにアクセスするだけで、手元に「ToDo」、「Doing」、「Done」の3つの「カンバン」を作成することができ、タスクの状況を確認することができます。<br>
 
 ## Description
 This tool is based on "Trello".<br>
@@ -34,6 +34,12 @@ Web上でアクセスされる場合は下記URLにアクセスしてくださ�
 アカウントを作成していただくと、アプリを使うことができます。<br>
 👉 https://my-stickies.herokuapp.com/
 
+## Test account
+Please use later test account to use this application for test.
+試しにアプリを使用してみる際には、下記のテストアカウントを使用してください！
+- mail address: aaa@test.com
+- password: test0123
+
 ## Commitment
 It has a simple UI　and you can use it by easier oparation.<br>
 When you want to change a situation of task, you only move "Stickies" to another board by drag and drop and the situation  of task is updated.<br>
@@ -42,7 +48,7 @@ Also, because I'd like to understand how session works, I made the feature of ma
 作成したタスクの状況が変わった時(例えばTodoからDoingに変わった時）は、対象タスクの付箋をドラッグアンドドロップすれば、タスクの状況を変更することができます。<br>
 タスクをボードからボードへ移動させるとajax通信でtasksテーブルのsituationカラムの内容を更新することができます。
 また、今回のアプリ制作においてセッションの仕組みを理解するため、<br>
-ユーザー登録によく使用されるgem 「devise」を使用せずに、ユーザー登録機能とログイン・ログアウト機能を実装いたしました。br>
+ユーザー登録によく使用されるgem 「devise」を使用せずに、ユーザー登録機能とログイン・ログアウト機能を実装いたしました。<br>
 テストコード （モデル単体テスト　rspecを使用）を記述したこともこだわりポイントです。
 
 ## Technology Used
