@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title MyPostIt
+    %title My Stickies
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -10,7 +10,7 @@
   %body
     %header
       = link_to root_path, class:"header--logo" do
-        My Post It
+        = image_tag 'logo.png',class: "header--logo__image"
     - flash.each do |key, value|
       %p.flashmessage
         = value
